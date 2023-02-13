@@ -18,7 +18,7 @@ class ComicController extends Controller
     {
         //
         $products = Comic::all();
-        return view('guest.welcome', compact('products'));
+        return view('products.index', compact('products'));
     }
 
     /**
