@@ -15,4 +15,4 @@ use App\Http\Controllers\Guest\ComicController as ComicController;
 
 
 Route::get('/', [ComicController::class, 'index'])->name('home');
-Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
+Route::get('/{id}', [ComicController::class, 'show'])->name('products.show');
