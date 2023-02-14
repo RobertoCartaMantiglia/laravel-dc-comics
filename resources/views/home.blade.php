@@ -20,17 +20,17 @@
     <main class="bg-light">
         <div class="container">
             <div class="row">
-                    @foreach ($comics as $comic)
-                        <div class="col-3 text-center mb-4">
-                            <div>
-                                <img src="{{$comic->thumb}}" alt="#">
-                            </div>
-                            <h2>{{$comic->title}}</h2>  
-                            <p>{{$comic->price}}</p> 
-                            <a href="{{route('products.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>                                                
+            
+                @foreach ($comics as $comic)
+                    <div class="col-3 text-center mb-4">
+                        <div>
+                            <img src="{{$comic->thumb}}" class="img-fluid" alt="#">
                         </div>
-                    @endforeach
-                   
+                        <h2>{{$comic->title}}</h2>  
+                        <p>{{$comic->price}}€</p> 
+                        <a href="{{route('products.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>                                                
+                    </div>
+                @endforeach                
                 
             </div>
 

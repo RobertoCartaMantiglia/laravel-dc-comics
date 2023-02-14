@@ -53,10 +53,9 @@
                         </label>
                         <input type="text" name="type" class="form-control">
                     </div> 
+                    <button>Aggiungi</button>
                 </form>
-                <a href="{{route('home')}}" class="btn btn-warning">
-                    Aggiungi
-                </a>             
+                            
             </div>
         </div>
     </div>
