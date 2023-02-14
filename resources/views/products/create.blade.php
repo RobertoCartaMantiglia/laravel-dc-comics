@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>create</title>
+    @vite('resources/js/app.js')
 </head>
 <body>
     <div class="container">
@@ -52,7 +53,10 @@
                         </label>
                         <input type="text" name="type" class="form-control">
                     </div> 
-                </form>             
+                </form>
+                <a href="{{route('home')}}" class="btn btn-warning">
+                    Aggiungi
+                </a>             
             </div>
         </div>
     </div>
