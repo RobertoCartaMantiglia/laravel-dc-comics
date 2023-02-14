@@ -20,7 +20,7 @@
     <main class="bg-light">
         <div class="container">
             <div class="row">
-            
+                <h1 class="text-center my-5">Questa é la home page di voi Utenti</h1>
                 @foreach ($comics as $comic)
                     <div class="col-3 text-center mb-4">
                         <div>
