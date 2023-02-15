@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ComicController as ComicController;
 use App\Http\Controllers\Guest\HomePageController as HomePageController;
+use Psy\Command\EditCommand;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,15 @@ use App\Http\Controllers\Guest\HomePageController as HomePageController;
 
 Route::get('home', [HomePageController::class, 'home'])->name('home');
 
-// Route::get('/', [ComicController::class, 'index'])->name('products.index');
-// Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
-// Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
-// Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
+Route::get('/', [ComicController::class, 'index'])->name('products.index');
+Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
+Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
+Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
+Route::get('products/{id}/edit', [ComicController::class, 'edit'])->name('products.edit');
+Route::put('products/{id}', [ComicController::class, 'update'])->name('products.update');
+
+//edit
+//update//destroy
 
 
-Route::resource('products', ComicController::class);
+// Route::resource('products', ComicController::class);
