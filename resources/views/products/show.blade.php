@@ -18,7 +18,7 @@
                     <img src="{{$comic->thumb}}" class="w-50" alt="#">
                     <h2>{{$comic->title}}</h2>
                     <p>{{$comic->description}}</p>
-                    <a href="{{route('home')}}" class=" btn btn-primary">Torna alla Home</a>
+                    <a href="{{route('products.index')}}" class=" btn btn-primary">Torna alla Home</a>
                 </div>
             </div>
         </div>
