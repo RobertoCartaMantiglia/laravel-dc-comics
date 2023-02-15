@@ -17,10 +17,10 @@ use App\Http\Controllers\Guest\HomePageController as HomePageController;
 
 Route::get('home', [HomePageController::class, 'home'])->name('home');
 
-Route::get('/', [ComicController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
-Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
-Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
+// Route::get('/', [ComicController::class, 'index'])->name('products.index');
+// Route::get('/products/create', [ComicController::class, 'create'])->name('products.create');
+// Route::post('/products/store', [ComicController::class, 'store'])->name('products.store');
+// Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
 
 
 Route::resource('products', ComicController::class);
