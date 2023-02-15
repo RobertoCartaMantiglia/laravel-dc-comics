@@ -90,15 +90,17 @@ class ComicController extends Controller
         $data = $request->all();
         //scriviamo $comic e non $newComic perché vogliamo modificare il dato che già abbiamo e non che vogliamo aggiungere
         $comic = Comic::findOrFail($id);
-        $comic->title = $data['title'];
-        $comic->description = $data['description'];
-        $comic->thumb = $data['thumb'];
-        $comic->price = $data['price'];
-        $comic->series = $data['series'];
-        $comic->sale_date = $data['sale_date'];
-        $comic->type = $data['type'];
-        $comic->save();
+        // $comic->title = $data['title'];
+        // $comic->description = $data['description'];
+        // $comic->thumb = $data['thumb'];
+        // $comic->price = $data['price'];
+        // $comic->series = $data['series'];
+        // $comic->sale_date = $data['sale_date'];
+        // $comic->type = $data['type'];
+        // $comic->save();
 
+        //FILLABLES
+        $comic->update($data);
         return redirect()->route('products.show', $comic->id);
     }
 
