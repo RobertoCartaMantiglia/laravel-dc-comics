@@ -20,7 +20,7 @@
     <main class="bg-light">
         <div class="container">
             <div class="row">
-            <h1 class="text-center">Questa è La index dell'Admin</h1>
+                <h1 class="text-center">Questa è La index dell'Admin</h1>
                 @foreach ($comics as $comic)
                     <div class="col-3 text-center mb-4">
                         <div>
@@ -28,9 +28,15 @@
                         </div>
                         <h2>{{$comic->title}}</h2>  
                         <p>{{$comic->price}}€</p> 
-                        <a href="{{route('products.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>                                                
+                        <a href="{{route('products.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>    
+                        <form action="{{route('products.destroy', $comic->id)}}" class="mt-2">
+                            <input type="submit" value="Cancella">
+                        </form>                                            
                     </div>
-                @endforeach                
+                @endforeach  
+
+                
+
                 
             </div>
 
