@@ -28,12 +28,16 @@
                         </div>
                         <h2>{{$comic->title}}</h2>  
                         <p>{{$comic->price}}€</p> 
-                        <a href="{{route('products.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>    
-                        <form action="{{route('products.destroy', $comic->id)}}" class="mt-2">
+                        <a href="{{route('products.show', $comic->id)}}" class="btn btn-primary">Dettagli</a>  
+
+                        <form action="{{route('products.destroy', $comic->id)}}" method="POST" class="mt-2">
+                            @csrf
+                            @method('DELETE')
                             <input type="submit" value="Cancella">
-                        </form>                                            
+                        </form>                                 
                     </div>
                 @endforeach  
+                  
 
                 
 

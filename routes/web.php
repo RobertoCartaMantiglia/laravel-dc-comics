@@ -24,7 +24,7 @@ Route::post('/products/store', [ComicController::class, 'store'])->name('product
 Route::get('/products/{id}', [ComicController::class, 'show'])->name('products.show');
 Route::get('products/{id}/edit', [ComicController::class, 'edit'])->name('products.edit');
 Route::put('products/{id}', [ComicController::class, 'update'])->name('products.update');
-Route::delete('products/{id}', [ComicController::class, 'delete'])->name('products.destroy');
+Route::delete('products/{id}', [ComicController::class, 'destroy'])->name('products.destroy');
 
 
 // Route::resource('products', ComicController::class);
