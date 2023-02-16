@@ -40,15 +40,29 @@ class ComicController extends Controller
     {
         $data = $request->all();
 
-        $request->validate([
-            'title' => 'required|min:2|max:150|unique:comics,title',
-            'description' => 'required|string|min:6',
-            'thumb' => 'required|url',
-            'price' => 'required|numeric',
-            'series' => 'required|string|min:2|max:200',
-            'sale_date' => 'required|date',
-            'type' => 'required|string|min:2|max:100',
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|min:2|max:150|unique:comics,title',
+                'description' => 'required|string|min:6',
+                'thumb' => 'required|url',
+                'price' => 'required|numeric',
+                'series' => 'required|string|min:2|max:200',
+                'sale_date' => 'required|date',
+                'type' => 'required|string|min:2|max:100',
+            ],
+            [
+                'title.required' => 'Il titolo è obblogatorio',
+                'title.min' => 'Il titolo deve contere almeno 2 caratteri',
+                'description.required' => 'La descrizione è necessaria',
+                'description.min' => 'La descrizione deve contenere minimo 6 caratteri',
+                'thumb.required' => 'L\'url della immagine è fondamentale',
+                'price.numeric' => 'Il prezzo va scritto in numeri',
+                'price.required' => 'Il prezzo va scritto',
+                'series.required' => 'La serie del fumetto va inserita',
+                'sale_date.required' => 'La data di vendita deve essere specificata',
+                'type.required' => 'La tipologia è obbligatoria'
+            ]
+        );
         $newComic = new Comic();
         // $newComic->title = $data['title'];
         // $newComic->description = $data['description'];
@@ -96,15 +110,29 @@ class ComicController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $request->validate([
-            'title' => 'required|min:2|max:150',
-            'description' => 'required|string|min:6',
-            'thumb' => 'required|url',
-            'price' => 'required|numeric',
-            'series' => 'required|string|min:2|max:200',
-            'sale_date' => 'required|date',
-            'type' => 'required|string|min:2|max:100',
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|min:2|max:150',
+                'description' => 'required|string|min:6',
+                'thumb' => 'required|url',
+                'price' => 'required|numeric',
+                'series' => 'required|string|min:2|max:200',
+                'sale_date' => 'required|date',
+                'type' => 'required|string|min:2|max:100',
+            ],
+            [
+                'title.required' => 'Il titolo è obblogatorio',
+                'title.min' => 'Il titolo deve contere almeno 2 caratteri',
+                'description.required' => 'La descrizione è necessaria',
+                'description.min' => 'La descrizione deve contenere minimo 6 caratteri',
+                'thumb.required' => 'L\'url della immagine è fondamentale',
+                'price.numeric' => 'Il prezzo va scritto in numeri',
+                'price.required' => 'Il prezzo va scritto',
+                'series.required' => 'La serie del fumetto va inserita',
+                'sale_date.required' => 'La data di vendita deve essere specificata',
+                'type.required' => 'La tipologia è obbligatoria'
+            ]
+        );
 
         //scriviamo $comic e non $newComic perché vogliamo modificare il dato che già abbiamo e non che vogliamo aggiungere
         $comic = Comic::findOrFail($id);
