@@ -27,7 +27,7 @@
                         <label for="title" class="form-label">
                             Titolo
                         </label>
-                        <input type="text" name="title" value="{{$comic->title}} {{old('title', "")}}" class="form-control">
+                        <input type="text" name="title" value="{{old('title') ?? $comic->title}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
@@ -39,31 +39,31 @@
                         <label for="thumb" class="form-label">
                             Immagine
                         </label>
-                        <input type="text" name="thumb" value="{{$comic->thumb}}"  class="form-control">
+                        <input type="text" name="thumb" value="{{old('thumb') ?? $comic->thumb}}"  class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">
                             Prezzo
                         </label>
-                        <input type="number" name="price" value="{{$comic->price}}"  class="form-control">
+                        <input type="number" name="price" value="{{old('price') ?? $comic->price}}"  class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="series" class="form-label">
                             Serie
                         </label>
-                        <input type="text" name="series" value="{{$comic->series}}"  class="form-control">
+                        <input type="text" name="series" value="{{old('series') ?? $comic->series}}"  class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="sale_date" class="form-label">
                             Data di Vendita
                         </label>
-                        <input type="date" name="sale_date" value="{{$comic->sale_date}}"  class="form-control">
+                        <input type="date" name="sale_date" value="{{old('sale_date') ?? $comic->sale_date}}"  class="form-control">
                     </div> 
                     <div class="mb-3">
                         <label for="type" class="form-label">
                             Tipologia
                         </label>
-                        <input type="text" name="type" value="{{$comic->type}}"  class="form-control">
+                        <input type="text" name="type" value="{{old('type') ?? $comic->type}}" class="form-control">
                     </div> 
                     <button>Aggiungi</button>
                 </form>
