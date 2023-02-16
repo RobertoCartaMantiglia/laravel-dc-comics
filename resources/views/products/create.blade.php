@@ -13,11 +13,23 @@
             <div class="col-12">
                 <form action="{{route('products.store')}}" method="POST">
                     @csrf
+                    @if($errors->any())
+                        <div class="alert alert-danger mt-3">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="mb-3">
                         <label for="title" class="form-label">
                             Titolo
                         </label>
                         <input type="text" name="title" class="form-control">
+                        {{-- @error('title')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror --}}
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>

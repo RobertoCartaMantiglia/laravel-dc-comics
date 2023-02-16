@@ -49,7 +49,6 @@ class ComicController extends Controller
             'sale_date' => 'required|date',
             'type' => 'required|string|min:2|max:100',
         ]);
-
         $newComic = new Comic();
         // $newComic->title = $data['title'];
         // $newComic->description = $data['description'];
