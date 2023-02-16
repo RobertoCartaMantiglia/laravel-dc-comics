@@ -46,8 +46,8 @@ class ComicController extends Controller
             'thumb' => 'required|url',
             'price' => 'required|numeric',
             'series' => 'required|string|min:2|max:200',
-            'sale_date' => 'nullable|date',
-            'type' => 'required|string|min:2|max:100'
+            'sale_date' => 'required|date',
+            'type' => 'required|string|min:2|max:100',
         ]);
 
         $newComic = new Comic();
@@ -97,6 +97,16 @@ class ComicController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
+        $request->validate([
+            'title' => 'required|min:2|max:150',
+            'description' => 'required|string|min:6',
+            'thumb' => 'required|url',
+            'price' => 'required|numeric',
+            'series' => 'required|string|min:2|max:200',
+            'sale_date' => 'required|date',
+            'type' => 'required|string|min:2|max:100',
+        ]);
+
         //scriviamo $comic e non $newComic perché vogliamo modificare il dato che già abbiamo e non che vogliamo aggiungere
         $comic = Comic::findOrFail($id);
         // $comic->title = $data['title'];
