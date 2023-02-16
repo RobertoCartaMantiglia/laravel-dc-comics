@@ -31,7 +31,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea class="form-control" name="description" value rows="3">
+                        <textarea class="form-control" name="description" rows="3">
                             {{ old('description') ?? $comic->description}}
                         </textarea>
                     </div> 
