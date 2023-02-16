@@ -26,47 +26,47 @@
                         <label for="title" class="form-label">
                             Titolo
                         </label>
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" value="{{old('title', "")}}" class="form-control">
 
                         {{-- @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror --}}      
                         {{-- MESSAGGIO PER SINGOLO INPUT (ALTERNATIVA) --}}
-                        
+
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea class="form-control" name="description" rows="3"></textarea>
+                        <textarea class="form-control" name="description" value="{{old('description', "")}}" rows="3"></textarea>
                     </div> 
                     <div class="mb-3">
                         <label for="thumb" class="form-label">
                             Immagine
                         </label>
-                        <input type="text" name="thumb" class="form-control">
+                        <input type="text" name="thumb" value="{{old('thumb', "")}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">
                             Prezzo
                         </label>
-                        <input type="number" name="price" class="form-control">
+                        <input type="number" name="price" value="{{old('price', "")}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="series" class="form-label">
                             Serie
                         </label>
-                        <input type="text" name="series" class="form-control">
+                        <input type="text" name="series" value="{{old('series', "")}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="sale_date" class="form-label">
                             Data di Vendita
                         </label>
-                        <input type="date" name="sale_date" class="form-control">
+                        <input type="date" name="sale_date" value="{{old('sale_date', "")}}" class="form-control">
                     </div> 
                     <div class="mb-3">
                         <label for="type" class="form-label">
                             Tipologia
                         </label>
-                        <input type="text" name="type" class="form-control">
+                        <input type="text" name="type" value="{{old('type', "")}}" class="form-control">
                     </div> 
                     <button>Aggiungi</button>
                 </form>
