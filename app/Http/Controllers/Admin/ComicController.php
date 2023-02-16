@@ -40,6 +40,16 @@ class ComicController extends Controller
     {
         $data = $request->all();
 
+        $request->validate([
+            'title' => 'required|min:2|max:150|unique:comics,title',
+            'description' => 'required|string|min:6',
+            'thumb' => 'required|url',
+            'price' => 'required|numeric',
+            'series' => 'required|string|min:2|max:200',
+            'sale_date' => 'nullable|date',
+            'type' => 'required|string|min:2|max:100'
+        ]);
+
         $newComic = new Comic();
         // $newComic->title = $data['title'];
         // $newComic->description = $data['description'];
@@ -50,7 +60,6 @@ class ComicController extends Controller
         // $newComic->type = $data['type'];
         $newComic->fill($data);
         $newComic->save();
-
         return redirect()->route('products.show', $newComic->id);
     }
 
